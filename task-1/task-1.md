@@ -58,7 +58,7 @@ function importCsvData(
 
 ## Code quality issues
 
-Because this code is written in Vanilla JavaScript, so the allImportData maybe has the script tag, we should sanitize the input data before processing it to prevent XSS attacks. But in this case, we assume that the input data is safe and does not contain any malicious scripts.
+Because this code is written in Vanilla JavaScript, so the allImportData might contain the script tag, we should sanitize the input data before processing it to prevent XSS attacks. But in this case, we assume that the input data is safe and does not contain any malicious scripts.
 
 ### 1. Unused Parameter
 
@@ -74,11 +74,11 @@ function importCsvData(
 ```
 
 - The apiName is not used but it is declare as parameter.
-- Confuse in parameter with *normalApiName* and *apiName* if we have use 2 api, it should name for the behavior not common name.
+- The naming is confusing with *normalApiName* and *apiName* if we have use 2 api, it should name for the behavior not common name.
 
 > We should remove apiName in parameter.
 
-### 2. Variation Declaration
+### 2. Variable Declaration
 
 ```js
   var data = [];
@@ -170,21 +170,21 @@ for (var i = 0; i < length; i++) {
 - We should create the variable to explain the behavior of 100.
 
 ```js
-  const backSize = 100;
-  if (lengthShown % backSize === 0) {
+  const batchSize = 100;
+  if (lengthShown % batchSize === 0) {
     importRowDataShow(length, lengthShown);
   }
 ```
 
-- For enhance case: we should move backSize to parameter for easy adjustment.
+- For enhance case: we should move batchSize to parameter for easy adjustment.
 
 ```js
 function importCsvData(
   ...
-  backSize = 100,
+  batchSize = 100,
 ) {
   // something happen here
-  if (lengthShown % backSize === 0) {
+  if (lengthShown % batchSize === 0) {
     importRowDataShow(length, lengthShown);
   }
   // something happen here
@@ -201,7 +201,7 @@ function importCsvData(
 - It should be more descriptive, such as `updateImportProgress` or `showImportProgress`.
 - The parameters `length` and `lengthShown` could also be renamed to `totalRows` and `processedRows` for clarity.
 - The `importRowDataShow` function is not defined in provided code, so we assume it is defined elsewhere.
-- The `importRowDataShow` is update status of processing data in client side, it not reflect the processing data in server side.
+- The `importRowDataShow` is update status of processing data in client side, it does not reflect the processing data in server side.
 
 ### 9. Missing Error Handling
 
@@ -281,11 +281,4 @@ function importCsvData(
 
 ## Refactored Code
 
-for more clarity, you can open the file in your editor to see the code with syntax highlighting.
-
-
-```js
-
-```
-
-## Considerations edge cases and error scenarios
+It should be linked to the [Refactored Solution](./task-1/suggest-code-task-1.js) file.
