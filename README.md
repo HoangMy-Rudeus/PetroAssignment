@@ -63,7 +63,7 @@ Review and refactor a JavaScript CSV import function, identifying code quality i
    cd PetroAssignment
    ```
 
-2. **Navigate to Task 1:**
+2. **Install dependencies:**
 
    ```bash
    pnpm install
