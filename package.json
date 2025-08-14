@@ -1,0 +1,26 @@
+{
+  "name": "interview",
+  "version": "1.0.0",
+  "description": "Interview preparation materials and documentation",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "serve": "npx markserv readme.md"
+  },
+  "keywords": [
+    "interview",
+    "preparation",
+    "documentation"
+  ],
+  "author": {
+    "name": "My-Hoang",
+    "email": "hoangmyit@outlook.com"
+  },
+  "license": "ISC",
+  "packageManager": "pnpm@10.11.0",
+  "dependencies": {
+    "markserv": "^1.17.4"
+  },
+  "engines": {
+    "node": ">=14.0.0"
+  }
+}
